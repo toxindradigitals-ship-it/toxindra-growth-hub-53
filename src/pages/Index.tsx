@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Services from "@/components/Services";
@@ -35,6 +36,7 @@ const Index = () => {
 
   return (
     <main className="overflow-x-hidden">
+      <Navigation />
       <Hero />
       <About />
       <Services />
