@@ -63,7 +63,7 @@ const Hero = () => {
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${slide.image})` }}
               />
-              <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
+              <div className="absolute inset-0 bg-black/20 backdrop-blur-[0.5px]" />
             </div>
           ))}
         </div>
@@ -86,7 +86,7 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 container-custom text-center">
-        <div className="fade-in-up animate max-w-4xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl">
+        <div className="fade-in-up animate max-w-4xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 md:p-12 shadow-xl border border-white/30">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-primary">
             Grow Your Business with Expert{" "}
             <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Marketing</span>{" "}
