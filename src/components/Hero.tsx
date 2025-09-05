@@ -53,18 +53,17 @@ const Hero = () => {
   ];
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background">
       {/* Carousel Container */}
-      <div className="embla absolute inset-0" ref={emblaRef}>
-        <div className="embla__container flex">
+      <div className="overflow-hidden absolute inset-0" ref={emblaRef}>
+        <div className="flex">
           {slides.map((slide, index) => (
-            <div key={index} className="embla__slide flex-[0_0_100%] relative">
+            <div key={index} className="flex-[0_0_100%] relative min-h-screen">
               <div 
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{ backgroundImage: `url(${slide.image})` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-background/70 via-background/60 to-muted/70"></div>
-              </div>
+              />
+              <div className="absolute inset-0 bg-white/40 backdrop-blur-[1px]" />
             </div>
           ))}
         </div>
@@ -73,28 +72,28 @@ const Hero = () => {
       {/* Navigation Buttons */}
       <button 
         onClick={scrollPrev}
-        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-background/20 backdrop-blur-md text-foreground p-3 rounded-full hover:bg-background/30 transition-all duration-300 hover:scale-110"
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md text-primary p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg"
       >
         <ChevronLeft className="h-6 w-6" />
       </button>
       
       <button 
         onClick={scrollNext}
-        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-background/20 backdrop-blur-md text-foreground p-3 rounded-full hover:bg-background/30 transition-all duration-300 hover:scale-110"
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/90 backdrop-blur-md text-primary p-3 rounded-full hover:bg-white transition-all duration-300 hover:scale-110 shadow-lg"
       >
         <ChevronRight className="h-6 w-6" />
       </button>
       
       {/* Content */}
-      <div className="relative z-10 container-custom text-center text-foreground">
-        <div className="fade-in-up animate max-w-4xl mx-auto">
+      <div className="relative z-10 container-custom text-center">
+        <div className="fade-in-up animate max-w-4xl mx-auto bg-white/95 backdrop-blur-md rounded-2xl p-8 md:p-12 shadow-xl">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-primary">
             Grow Your Business with Expert{" "}
-            <span className="gradient-text">Digital Marketing</span>{" "}
+            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Digital Marketing</span>{" "}
             & Website Design
           </h1>
           
-          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl lg:text-2xl mb-8 text-primary/80 max-w-3xl mx-auto">
             Toxindra Digitals helps small businesses attract more customers and boost online visibility with proven strategies and creative solutions.
           </p>
           
@@ -108,11 +107,11 @@ const Hero = () => {
             </Button>
             
             <div className="flex gap-4">
-              <a href="tel:+2347086825878" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href="tel:+2347086825878" className="flex items-center gap-2 text-primary/70 hover:text-primary transition-colors">
                 <Phone className="h-4 w-4" />
                 <span className="text-sm">+234 708 682 5878</span>
               </a>
-              <a href="mailto:toxindradigital@gmail.com" className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:toxindradigital@gmail.com" className="flex items-center gap-2 text-primary/70 hover:text-primary transition-colors">
                 <Mail className="h-4 w-4" />
                 <span className="text-sm">Email Us</span>
               </a>
@@ -120,36 +119,36 @@ const Hero = () => {
           </div>
           
           {/* Trust Indicators */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
               <div className="text-3xl font-bold text-primary">50+</div>
-              <div className="text-sm text-muted-foreground">Happy Clients</div>
+              <div className="text-sm text-primary/60">Happy Clients</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">3+</div>
-              <div className="text-sm text-muted-foreground">Years Experience</div>
+              <div className="text-sm text-primary/60">Years Experience</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">100%</div>
-              <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+              <div className="text-sm text-primary/60">Client Satisfaction</div>
             </div>
             <div>
               <div className="text-3xl font-bold text-primary">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
+              <div className="text-sm text-primary/60">Support</div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Carousel Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
         {slides.map((_, index) => (
           <button
             key={index}
-            className={`w-3 h-3 rounded-full transition-all duration-300 ${
+            className={`w-4 h-4 rounded-full transition-all duration-300 ${
               index === selectedIndex 
-                ? 'bg-primary scale-125' 
-                : 'bg-muted-foreground/50 hover:bg-muted-foreground'
+                ? 'bg-primary scale-125 shadow-lg' 
+                : 'bg-white/70 hover:bg-white/90'
             }`}
             onClick={() => emblaApi?.scrollTo(index)}
           />
